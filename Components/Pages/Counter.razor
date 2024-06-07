@@ -1,0 +1,51 @@
+﻿@page "/counter"
+@rendermode InteractiveServer
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Calculator</h1>
+
+<table>
+    <tbody>
+         <tr>
+            <td><button></button></td>
+            <td><button></button></td>
+            <td><button>%</button></td>
+            <td><button>/</button></td>
+        </tr>
+        <tr>
+            <td><button>1</button></td>
+            <td><button>2</button></td>
+            <td><button>3</button></td>
+            <td><button>x</button></td>
+        </tr>
+                <tr>
+            <td><button>4</button></td>
+            <td><button>5</button></td>
+            <td><button>6</button></td>
+            <td><button>-</button></td>
+        </tr>
+                <tr>
+            <td><button>7</button></td>
+            <td><button>8</button></td>
+            <td><button>9</button></td>
+            <td><button>+</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button>0</button></td>
+            <td><button>.</button></td>
+            <td><button>=</button></td>
+        </tr>
+    </tbody>
+</table>
+@code {
+    private int currentCount = 0;
+
+[Parameter]
+    public string? InitialCount {get; set;}
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}

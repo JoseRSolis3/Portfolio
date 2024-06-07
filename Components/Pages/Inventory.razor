@@ -1,0 +1,146 @@
+@page "/Inventory"
+@rendermode InteractiveServer
+
+<h1>Inventory Application</h1>
+
+<p>
+    This is a personal project not a Microsoft pre-built.
+</p>
+
+@if (itemExists == true)
+{
+    <alert>This medication exists, increasing quantity of existing medication</alert>
+}
+else if (existingNDC == true)
+{
+    <alert>This NDC is already Assigned to a different Medication</alert>
+}
+else if (itemsEntered == true)
+{
+    <alert>Medication Successfully Added</alert>
+}
+else if (ndcValidLength == false)
+{
+    <alert>Entered NDC is not valid</alert>
+}
+
+
+<div>
+    <EditForm Model="@newMedication">
+        <table>
+            <tbody>
+                <tr>
+                    <select @bind="newFrom">
+                        @foreach (var item in Medication.MedicationForms)
+                        {
+                            <option>@item</option>
+                        }
+                    </select> 
+                </tr>
+                <tr>
+                <input @bind="newName" placeholder="Drug Name" />
+                <input @bind="newStrength" placeholder="Strength" />
+                @if (newFrom == "Injectable Liquid Vial" || newFrom == "Oral Liquid")
+                {
+                    <select @bind="newStrengthVolume">
+                        @for (int k = 0; k < Medication.StrenghtVolume.Length; k++)
+                        {
+                            <option>@Medication.StrenghtVolume[k]</option>
+                        }
+                    </select>
+                }
+                else
+                {
+                    <select @bind="newMassStrength">
+                    @for (int k = 0; k < Medication.MassStrength.Length; k++)
+                        {
+                            <option>@Medication.MassStrength[k]</option>
+                        }
+                    </select>
+                }
+                </tr>
+                <tr>
+                <input @bind="newQuantity" placeholder="Quantity" />
+                <input @bind="newNDC" placeholder="NDC" />
+                </tr>
+                <tr>
+                <button @onclick="AddTodo">Save</button>
+                </tr>
+            </tbody>
+        </table>
+    </EditForm>
+</div>
+
+
+<div>
+    <table class="table">
+        <thead>
+            <th></th>
+            <th>Drug</th>
+            <th>Form</th>
+            <th>Quantity in Stock</th>
+            <th>NDC</th>
+        </thead>
+        <tbody>
+            @for (i = 0; i < medications.Count; i++)
+            {
+                var index = i;
+                @if (editItem == true && i == editingIndex)
+                {
+                    <tr>
+                        <td><button @onclick="@( () => SaveTodo(index))">Save</button></td>
+                        <td><input @bind="medications[editingIndex].Name" placeholder="Drug Name" /></td>
+                        <td><input @bind="medications[editingIndex].Strength" placeholder="Strength" /></td>
+                        <td>
+                            <select @bind="medications[editingIndex].Form">
+                                @for (int k = 0; k < Medication.MedicationForms.Length; k++)
+                                {
+                                    <option>@Medication.MedicationForms[k]</option>
+                                }
+                            </select>
+                        </td>
+                        <td><input @bind="medications[editingIndex].Quantity" placeholder="Quantity" /></td>
+                        <td><input @bind="medications[editingIndex].NDC" placeholder="NDC" /></td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td><button @onclick="@( () => EditingItem(index) )">Edit</button></td>
+                        @if (medications[i].Form == "Injectable Liquid Vial" || medications[i].Form == "Oral Liquid")
+                            {
+                                <td>@($"{medications[i].Name} {medications[i].Strength} {medications[i].VolumeStrength}")</td>
+                            }
+                            else
+                            {
+                             <td>@($"{medications[i].Name} {medications[i].Strength} {medications[i].StrengthMass}")</td>
+                            }
+                        <td>@medications[i].Form</td>
+                        <td>
+                            <strong>
+                                @if (medications[i].Form == "Oral Liquid")
+                                {
+                                    @($"{medications[i].Quantity} mL")
+                                }
+                                else if (medications[i].Form == "Oral Tablet")
+                                {
+                                    @($"{medications[i].Quantity} Tablet(s)")
+                                }   
+                            </strong>
+                        </td>
+                        <td>
+                            @if (medications[i].NDC != null && medications[i].NDC.ToString().Length == 10)
+                            {
+                                <strong>@(String.Format("{0:00000-000-00}", medications[i].NDC))</strong>
+                            }
+                            else if (medications[i].NDC != null && medications[i].NDC.ToString().Length == 11)
+                            {
+                                <strong>@(String.Format("{0:00000-0000-00}", medications[i].NDC))</strong>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
