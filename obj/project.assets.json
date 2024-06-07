@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Volumes/Coding/Portfolio-main/BlazorApp3.csproj",
+      "projectUniqueName": "/Volumes/Coding/Portfolio/Portfolio-main/BlazorApp3.csproj",
       "projectName": "BlazorApp3",
-      "projectPath": "/Volumes/Coding/Portfolio-main/BlazorApp3.csproj",
+      "projectPath": "/Volumes/Coding/Portfolio/Portfolio-main/BlazorApp3.csproj",
       "packagesPath": "/Users/josesolis/.nuget/packages/",
-      "outputPath": "/Volumes/Coding/Portfolio-main/obj/",
+      "outputPath": "/Volumes/Coding/Portfolio/Portfolio-main/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/josesolis/.nuget/NuGet/NuGet.Config"
