@@ -86,3 +86,5 @@
 /Volumes/Coding/Portfolio-main/obj/Debug/net8.0/BlazorApp3.pdb
 /Volumes/Coding/Portfolio-main/obj/Debug/net8.0/BlazorApp3.genruntimeconfig.cache
 /Volumes/Coding/Portfolio-main/obj/Debug/net8.0/ref/BlazorApp3.dll
+/Volumes/Coding/Portfolio-main/obj/Debug/net8.0/BlazorApp3.sourcelink.json
+/Volumes/Coding/Portfolio-main/obj/Debug/net8.0/scopedcss/Components/Pages/Inventory.razor.rz.scp.css

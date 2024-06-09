@@ -1,6 +1,7 @@
 @page "/Inventory"
 @rendermode InteractiveServer
 
+
 <h1>Inventory Application</h1>
 
 <p>
@@ -23,53 +24,70 @@ else if (ndcValidLength == false)
 {
     <alert>Entered NDC is not valid</alert>
 }
-
+else if (inputEmpty == true)
+{
+    <alert>Input fields are empty.</alert>
+}
 
 <div>
-    <EditForm Model="@newMedication">
-        <table>
-            <tbody>
-                <tr>
-                    <select @bind="newFrom">
-                        @foreach (var item in Medication.MedicationForms)
-                        {
-                            <option>@item</option>
-                        }
-                    </select> 
-                </tr>
-                <tr>
-                <input @bind="newName" placeholder="Drug Name" />
-                <input @bind="newStrength" placeholder="Strength" />
-                @if (newFrom == "Injectable Liquid Vial" || newFrom == "Oral Liquid")
-                {
-                    <select @bind="newStrengthVolume">
-                        @for (int k = 0; k < Medication.StrenghtVolume.Length; k++)
-                        {
-                            <option>@Medication.StrenghtVolume[k]</option>
-                        }
-                    </select>
-                }
-                else
-                {
-                    <select @bind="newMassStrength">
-                    @for (int k = 0; k < Medication.MassStrength.Length; k++)
-                        {
-                            <option>@Medication.MassStrength[k]</option>
-                        }
-                    </select>
-                }
-                </tr>
-                <tr>
-                <input @bind="newQuantity" placeholder="Quantity" />
-                <input @bind="newNDC" placeholder="NDC" />
-                </tr>
-                <tr>
-                <button @onclick="AddTodo">Save</button>
-                </tr>
-            </tbody>
-        </table>
-    </EditForm>
+    <button class="Addbutton" @onclick="MenuActivated">
+        Add
+    </button>
 </div>
+
+@if (inventoryMenu == true)
+{
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-content">
+                <EditForm Model="@newMedication">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <select @bind="newFrom">
+                                    @foreach (var item in Medication.MedicationForms)
+                                    {
+                                        <option>@item</option>
+                                    }
+                                </select>
+                            </tr>
+                            <tr>
+                                <input @bind="newName" placeholder="Drug Name" />
+                                <input @bind="newStrength" placeholder="Strength" />
+                                @if (newFrom == "Injectable Liquid Vial" || newFrom == "Oral Liquid")
+                                {
+                                    <select @bind="newStrengthVolume">
+                                        @for (int k = 0; k < Medication.StrenghtVolume.Length; k++)
+                                        {
+                                            <option>@Medication.StrenghtVolume[k]</option>
+                                        }
+                                    </select>
+                                }
+                                else
+                                {
+                                    <select @bind="newMassStrength">
+                                        @for (int k = 0; k < Medication.MassStrength.Length; k++)
+                                        {
+                                            <option>@Medication.MassStrength[k]</option>
+                                        }
+                                    </select>
+                                }
+                            </tr>
+                            <tr>
+                                <input @bind="newQuantity" placeholder="Quantity" />
+                                <input @bind="newNDC" placeholder="NDC" />
+                            </tr>
+                            <tr>
+                                <button @onclick="AddTodo">Save</button>
+                                <button @onclick="MenuDeactivated">Cancel</button>
+                            </tr>
+                        </tbody>
+                    </table>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+}
 
 
 <div>

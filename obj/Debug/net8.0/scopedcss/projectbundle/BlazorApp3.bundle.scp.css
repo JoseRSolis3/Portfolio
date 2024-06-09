@@ -201,3 +201,51 @@ main[b-8gerjhmso1] {
         overflow-y: auto;
     }
 }
+/* _content/BlazorApp3/Components/Pages/Inventory.razor.rz.scp.css */
+.modal-overlay[b-slskolly59] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal[b-slskolly59] {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* shadow effect */
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    display: contents;
+}
+
+.modal-content[b-slskolly59] {
+    max-width: 400px; /* adjust as needed */
+    background-color: white;
+}
+
+.modal-overlay.hidden[b-slskolly59] {
+    display: none; /* hide the modal overlay */
+}
+
+.Addbutton[b-slskolly59]
+{
+    background-color: lightgray;
+    width: 30 px;
+}
+
+.Addbutton:hover[b-slskolly59]
+{
+    background-color: white;
+}

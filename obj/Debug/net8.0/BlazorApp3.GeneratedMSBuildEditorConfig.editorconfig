@@ -9,51 +9,51 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BlazorApp3
 build_property.RootNamespace = BlazorApp3
-build_property.ProjectDir = /Volumes/Coding/Portfolio/Portfolio-main/
+build_property.ProjectDir = /Volumes/Coding/Portfolio-main/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Volumes/Coding/Portfolio/Portfolio-main
+build_property.MSBuildProjectDirectory = /Volumes/Coding/Portfolio-main
 build_property._RazorSourceGeneratorDebug = 
 
-[/Volumes/Coding/Portfolio/Portfolio-main/Components/App.razor]
+[/Volumes/Coding/Portfolio-main/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Coding/Portfolio/Portfolio-main/Components/Pages/Counter.razor]
+[/Volumes/Coding/Portfolio-main/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Coding/Portfolio/Portfolio-main/Components/Pages/Error.razor]
+[/Volumes/Coding/Portfolio-main/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9FcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Coding/Portfolio/Portfolio-main/Components/Pages/Home.razor]
+[/Volumes/Coding/Portfolio-main/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ib21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Coding/Portfolio/Portfolio-main/Components/Pages/Inventory.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9JbnZlbnRvcnkucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Volumes/Coding/Portfolio/Portfolio-main/Components/Pages/Weather.razor]
+[/Volumes/Coding/Portfolio-main/Components/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9XZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Coding/Portfolio/Portfolio-main/Components/Routes.razor]
+[/Volumes/Coding/Portfolio-main/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Sb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Coding/Portfolio/Portfolio-main/Components/_Imports.razor]
+[/Volumes/Coding/Portfolio-main/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9fSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Volumes/Coding/Portfolio/Portfolio-main/Components/Layout/MainLayout.razor]
+[/Volumes/Coding/Portfolio-main/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-8gerjhmso1
 
-[/Volumes/Coding/Portfolio/Portfolio-main/Components/Layout/NavMenu.razor]
+[/Volumes/Coding/Portfolio-main/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-6vsp956m5l
+
+[/Volumes/Coding/Portfolio-main/Components/Pages/Inventory.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9JbnZlbnRvcnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-slskolly59

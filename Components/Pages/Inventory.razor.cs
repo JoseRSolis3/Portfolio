@@ -16,12 +16,23 @@ namespace BlazorApp3.Components.Pages
         private bool itemsEntered = false;
         private bool editItem = false;
         private bool ndcValidLength = true;
+        private bool inventoryMenu = false;
+        private bool inputEmpty = false;
         private int i = 0;
         private int editingIndex = -1;
         private string? newFrom = "";
         private string? newStrengthVolume = "";
         private string? newMassStrength = "";
 
+        private void MenuActivated()
+        {
+            inventoryMenu = true;
+        }
+        private void MenuDeactivated()
+        {
+            inventoryMenu = false;
+            ClearAlertMessage();
+        }
         private void EditingItem(int index)
         {
             editingIndex = index;
@@ -33,6 +44,7 @@ namespace BlazorApp3.Components.Pages
             itemExists = false;
             existingNDC = false;
             itemsEntered = false;
+            inputEmpty = false;
         }
 
         private void ClearEntries()
@@ -150,9 +162,11 @@ namespace BlazorApp3.Components.Pages
                     ndcValidLength = true;
                 }
                 editItem = false;
+                inventoryMenu = false;
             }
             else
             {
+                inputEmpty = true;
                 Console.WriteLine(newNDC.ToString().Length);
                 Console.WriteLine("Input fields are empty.");
                 ClearAlertMessage();
